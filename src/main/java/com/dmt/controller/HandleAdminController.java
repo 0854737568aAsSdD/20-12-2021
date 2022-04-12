@@ -40,7 +40,7 @@ public class HandleAdminController {
 		response.setContentType("text/html;charset=utf-8");
 		String nameimg = null, tendienthoai = null, manhinh = null;
 		String urlimage = null, madienthoai = null, loai = null, hedieuhanh = null, cpu = null;
-		String camerasau = null,cameratruoc=null,ram=null,bonhotrong=null;
+		String camerasau = null, cameratruoc = null, ram = null, bonhotrong = null;
 		int gia = 0;
 		DiskFileItemFactory factory = new DiskFileItemFactory();
 		DiskFileItemFactory fileItemFactory = new DiskFileItemFactory();
@@ -109,7 +109,7 @@ public class HandleAdminController {
 					if (tentk.equals("txtbonhotrong")) {
 						bonhotrong = fileItem.getString("utf-8");
 					}
-					
+
 				}
 
 			}
@@ -120,13 +120,12 @@ public class HandleAdminController {
 		urlimage = "hinh/" + nameimg;
 		AddSachBo bo = new AddSachBo();
 		try {
-			bo.themdienthoai(madienthoai, tendienthoai, manhinh, gia, hedieuhanh, loai, cpu, urlimage, camerasau, cameratruoc, ram, bonhotrong);
+			bo.themdienthoai(madienthoai, tendienthoai, manhinh, gia, hedieuhanh, loai, cpu, urlimage, camerasau,
+					cameratruoc, ram, bonhotrong);
+			request.setAttribute("them", "them");
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
-		request.setAttribute("themsach", "themsach");
-
-		return "ThemThanhCongRoiNe";
-
+		return "HomeAdmin";
 	}
 }

@@ -209,12 +209,12 @@ footer img {
 
 		<nav class="navbar bg-dark justify-content-center" id="nav2">
 			<ul class="nav ">
-				<li class="nav-item"><a class="nav-link" href="Html/Home.html">TRANG
+				<li class="nav-item"><a class="nav-link" href="About">TRANG
 						CHỦ</a></li>
-				<li class="nav-item"><a class="nav-link" href="Html/About.html">GIỚI
+				<li class="nav-item"><a class="nav-link" href="Home">GIỚI
 						THIỆU</a></li>
 				<li class="nav-item"><a class="nav-link"
-					href="Html/Products.html">SẢN PHẨM</a></li>
+					href="phone">SẢN PHẨM</a></li>
 				<li class="nav-item"><a class="nav-link" href="#">TIN TỨC</a></li>
 				<li><a class="nav-link" href="Html/Login.html"><img
 						style="height: 80px; border-radius: 50px; margin: 0 50px;"
@@ -223,9 +223,9 @@ footer img {
 				<li class="nav-item"><a class="nav-link" href="#">DỊCH VỤ</a></li>
 				<li class="nav-item"><a class="nav-link" href="#">NHƯỢNG
 						QUYỀN </a></li>
-				<li class="nav-item"><a class="nav-link" href="#">THANH
+				<li class="nav-item"><a class="nav-link" href="LichSuController">THANH
 						TOÁN</a></li>
-				<li class="nav-item"><a class="nav-link" href="#">LIÊN HỆ</a></li>
+				<li class="nav-item"><a class="nav-link" href="Admin">ADMIN</a></li>
 			</ul>
 		</nav>
 
@@ -327,10 +327,7 @@ footer img {
 				<a href="#">Phương thức thanh toán</a> <br> <a href="#">Phương
 					thức vận chuyển</a>
 			</div>
-			<div class="col-md-1">
-				<a href="#">Liên hệ</a> <br> <a href="#">Tính Nguyễn</a> <a
-					href="#">Lâm Vĩnh</a>
-			</div>
+
 			<div class="col-md-1"></div>
 			<div class="col-md-3" id="imgf">
 				<a href=""><img src="hinh/fb.png"> </a> <a href=""><img

@@ -13,13 +13,14 @@ public class DeleteController {
 	public String voidshow(HttpServletRequest request) {
 		try {
 			String madienthoai = request.getParameter("madienthoai");
+
 			AddSachBo bo = new AddSachBo();
 			bo.DeleteSach(madienthoai);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return "Xoa";
+		return "HomeAdmin";
 	}
 
 }

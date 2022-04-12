@@ -112,9 +112,9 @@ public class UpfileSuaSachLenServer {
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
-		request.setAttribute("themsach", "themsach");
+		request.setAttribute("suasach", "suasach");
 
-		return "SuaThanhCong";
+		return "HomeAdmin";
 
 	}
 

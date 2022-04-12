@@ -12,6 +12,7 @@ import com.dmt.bo.DangKyBo;
 //import com.dmt.bo.KhachHangBo;
 import com.dmt.bo.KhachHangBo;
 import com.dmt.utills.MD5;
+import com.dmt.utills.VerifyUtils;
 
 @Controller
 public class KhachHangController {
@@ -21,27 +22,43 @@ public class KhachHangController {
 		return "Login";
 	}
 
-	@RequestMapping("/KiemTra")
+	@RequestMapping("/Logout")
+	public String LogoutPage(HttpServletRequest request, HttpSession session) {
+		if (session.getAttribute("khachhang") != null) {
+			session.removeAttribute("khachhang");
+		}
+		return "About";
+
+	}
+
+	@RequestMapping(value = "/KiemTra", method = RequestMethod.POST)
 	public String voidKiemtra(HttpServletRequest request, HttpSession session) {
-		try {			
+		try {
+			Boolean valid = true;
 			MD5 md5 = new MD5();
-			String kiemtra = request.getParameter("kiemtra");
 			String username = request.getParameter("Email");
 			String password = request.getParameter("password");
-			String passwordDaBam = md5.getHashPass(password);
-			KhachHangBo bo = new KhachHangBo();
-			KhachHangBean kh = bo.ktdm(username, passwordDaBam);
-			session.setAttribute("khachhang", kh);
-			if (kiemtra != null) {
-				session.setAttribute("khachhang", null);
-			}
-			if (username != null || password != null) {
-				if (kh == null)
+
+			if (username != null && password != null) {
+				String passwordDaBam = md5.getHashPass(password);
+				KhachHangBo bo = new KhachHangBo();
+				KhachHangBean kh = bo.ktdm(username, passwordDaBam);
+				if (kh != null) {
+					String gRecaptchaResponse = request.getParameter("g-recaptcha-response");
+					// Verify CAPTCHA.
+					valid = VerifyUtils.verify(gRecaptchaResponse);
+					if (valid == true) {
+						session.setAttribute("khachhang", kh);
+					} else {
+						request.setAttribute("SaiCapcha", "1");
+					}
+				} else {
 					request.setAttribute("saidangnhap", "1");
+				}
 			}
+
 			return "About";
 		} catch (Exception e) {
-			// TODO: handle exception
 			return null;
 		}
 
@@ -53,7 +70,7 @@ public class KhachHangController {
 		int x = 0;
 		try {
 			request.setCharacterEncoding("UTF-8");
-			MD5 md5= new MD5();
+			MD5 md5 = new MD5();
 			String HoTen = request.getParameter("HoTen");
 			String SoDienThoai = request.getParameter("SoDienThoai");
 			String DiaChi = request.getParameter("DiaChi");
@@ -70,7 +87,7 @@ public class KhachHangController {
 			return "DangKyThatBai";
 		} else {
 			request.setAttribute("dangkythanhcong", "123");
-			return "DangKyThanhCong";
+			return "About";
 		}
 
 	}

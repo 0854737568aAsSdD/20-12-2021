@@ -117,12 +117,12 @@ data-spy="scroll" data-target="#nav1" data-offset="50">
 		<div>
 			<nav class="navbar bg-dark justify-content-center" id="nav2">
 				<ul class="nav " id="reponsive">
-					<li class="nav-item"><a class="nav-link" href="Html/Home.html">TRANG
+					<li class="nav-item"><a class="nav-link" href="About">TRANG
 							CHỦ</a></li>
 					<li class="nav-item"><a class="nav-link"
-						href="Html/About.html">GIỚI THIỆU</a></li>
+						href="Home">GIỚI THIỆU</a></li>
 					<li class="nav-item"><a class="nav-link"
-						href="Html/Products.html">SẢN PHẨM</a></li>
+						href="phone">SẢN PHẨM</a></li>
 					<li class="nav-item"><a class="nav-link" href="#">TIN TỨC</a>
 					</li>
 					<li class="nav-item" id="logo"><a class="nav-link"
@@ -133,7 +133,7 @@ data-spy="scroll" data-target="#nav1" data-offset="50">
 					</li>
 					<li class="nav-item"><a class="nav-link" href="#">NHƯỢNG
 							QUYỀN </a></li>
-					<li class="nav-item"><a class="nav-link" href="#">THANH
+					<li class="nav-item"><a class="nav-link" href="LichSuController">THANH
 							TOÁN</a></li>
 					<li class="nav-item"><a class="nav-link" href="Admin">ADMIN</a>
 					</li>
@@ -171,7 +171,7 @@ data-spy="scroll" data-target="#nav1" data-offset="50">
 									<h3>${c.tendienthoai}</h3>
 									<div class="price">
 										<strong value>6.990.000₫</strong>
-										<a href="add?makh=${khachhang.getMakh()}&tendienthoai=${c.tendienthoai}$&gia=${c.gia}&anh=${c.anh}&madienthoai=${c.madienthoai}">Dat Mua</a>
+										<a href="add?makh=${khachhang.getMakh()}&tendienthoai=${c.tendienthoai}$&gia=${c.gia}&anh=${c.anh}&madienthoai=${c.madienthoai}">Đặt mua</a>
 									</div>
 									<div class="promo noimage">
 										<p>Tặng 2 suất mua Đồng hồ thời trang giảm 40% (kh&#244;ng

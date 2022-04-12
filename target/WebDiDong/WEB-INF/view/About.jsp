@@ -147,9 +147,11 @@ footer img {
 				</a>
 				<li class="nav-item"><span>Hệ thống:</span><br> <span>Cửa
 						hàng bán lẻ</span></li>
-				<a class="navbar-brand" href="#"> <img
-					src="hinh/phonehead_image.png" style="width: 40px;">
-				</a>
+				<li><a class="navbar-brand" href="#"> <img
+						src="hinh/phonehead_image.png" style="width: 40px;">
+				</a></li>
+
+
 				<li class="nav-item"><span>Hotline mua hàng:</span><br> <span>Gọi
 						ngay: 1900100</span></li>
 				<a class="navbar-brand" href="#"> <img src="hinh/user_image.png"
@@ -162,7 +164,7 @@ footer img {
 				<c:if test="${not empty khachhang}">
 					<ul>
 						<li class="nav-item" style="color: yellow;">Hello, ${language }</li>
-						<li class="nav-item"><span><a href="KiemTra?kiemtra=0">Đăng
+						<li class="nav-item"><span><a href="Logout">Đăng
 									Xuất</a></span></li>
 					</ul>
 >
@@ -173,6 +175,20 @@ footer img {
 							$('#myModal').modal('show');
 						});
 					</script>
+				</c:if>
+				<c:if test="${not empty dangkythanhcong }">
+					<script type="text/javascript">
+			$(window).on('load', function() {
+				$('#myModal123').modal('show');
+			});
+		</script>
+				</c:if>
+				<c:if test="${not empty SaiCapcha }">
+					<script type="text/javascript">
+			$(window).on('load', function() {
+				$('#myModal456').modal('show');
+			});
+		</script>
 				</c:if>
 
 
@@ -241,21 +257,21 @@ footer img {
 			<ul class="nav ">
 				<li class="nav-item"><a class="nav-link" href="Home">TRANG
 						CHỦ</a></li>
-				<li class="nav-item"><a class="nav-link" href="Html/About.html">GIỚI
+				<li class="nav-item"><a class="nav-link" href="Home">GIỚI
 						THIỆU</a></li>
-				<li class="nav-item"><a class="nav-link"
-					href="Html/Products.html">SẢN PHẨM</a></li>
+				<li class="nav-item"><a class="nav-link" href="phone">SẢN
+						PHẨM</a></li>
 				<li class="nav-item"><a class="nav-link" href="#">TIN TỨC</a></li>
 				<li><a href="Html/Home.html"><img
 						style="height: 80px; border-radius: 50px; margin: 0 50px;"
 						src="hinh/python.jpg"></a></li>
 
-				<li class="nav-item"><a class="nav-link" href="#">DỊCH VỤ</a></li>
-				<li class="nav-item"><a class="nav-link" href="#">NHƯỢNG
-						QUYỀN </a></li>
-				<li class="nav-item"><a class="nav-link" href="#">THANH
-						TOÁN</a></li>
-				<li class="nav-item"><a class="nav-link" href="#">LIÊN HỆ</a></li>
+				<li class="nav-item"><a class="nav-link" href="PhanHoi">PHẢN
+						HỒI</a></li>
+				<li class="nav-item"><a class="nav-link" href="tinnhan">TIN NHẮN </a></li>
+				<li class="nav-item"><a class="nav-link"
+					href="LichSuController">LỊCH SỬ MUA</a></li>
+				<li class="nav-item"><a class="nav-link" href="Admin">ADMIN</a></li>
 			</ul>
 		</nav>
 		<div class="col-md-12 text-left" id="demo">
@@ -265,42 +281,29 @@ footer img {
 			<div class="swiper-wrapper">
 				<div class="swiper-slide">
 					<div class="imgcard">
-						<img src="hinh/img.jpg" alt="">
-						<div class="details">
-							<h3>
-								Lâm Vĩnh<br> <span>Web Designer</span>
-							</h3>
-						</div>
+						<img src="hinh/samsung-galaxy-fold-black-400x400.jpg" alt="">
+						<div class="details"></div>
 					</div>
 				</div>
 				<div class="swiper-slide">
 					<div class="imgcard">
-						<img height="400px" src="hinh/img1.jpg" alt="">
-						<div class="details">
-							<h3>
-								Nguyễn Văn Tính<br> <span>Web Designer</span>
-							</h3>
-						</div>
+						<img height="400px"
+							src="hinh/samsung-galaxy-note-10-plus-blue-400x400.jpg" alt="">
+						<div class="details"></div>
 					</div>
 				</div>
 				<div class="swiper-slide">
 					<div class="imgcard">
-						<img src="hinh/img.jpg" alt="">
-						<div class="details">
-							<h3>
-								Lâm Vĩnh<br> <span>Web Designer</span>
-							</h3>
-						</div>
+						<img src="hinh/samsung-galaxy-z-flip-den-600x600-400x400.jpg"
+							alt="">
+						<div class="details"></div>
 					</div>
 				</div>
 				<div class="swiper-slide">
 					<div class="imgcard">
-						<img height="400px" src="hinh/img1.jpg" alt="">
-						<div class="details">
-							<h3>
-								Nguyễn Văn Tính <br> <span>Web Designer</span>
-							</h3>
-						</div>
+						<img height="400px"
+							src="hinh/samsung-galaxy-s20-plus-400x460-fix-400x460.png" alt="">
+						<div class="details"></div>
 					</div>
 				</div>
 
@@ -350,10 +353,6 @@ footer img {
 					thức vận chuyển</a>
 			</div>
 			<div class="col-md-1">
-				<a href="#">Liên hệ</a> <br> <a href="#">Tính Nguyễn</a> <a
-					href="#">Lâm Vĩnh</a>
-			</div>
-			<div class="col-md-1">
 				<a style="padding-left: 40%;" href="#">Liên kết</a>
 			</div>
 			<div class="col-md-3" id="imgf">
@@ -370,7 +369,33 @@ footer img {
 					<button type="button" class="close" data-dismiss="modal">×</button>
 				</div>
 				<div class="modal-body">
-					<h3 class="text-center">Sai thông tin tài khoản hoặc mật khẩu </h3>
+					<h3 class="text-center">Sai thông tin tài khoản hoặc mật khẩu
+					</h3>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal fade" id="myModal123" role="dialog">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">×</button>
+				</div>
+				<div class="modal-body">
+					<h3 class="text-center">Đăng Ký Thành Công</h3>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade" id="myModal456" role="dialog">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">×</button>
+				</div>
+				<div class="modal-body">
+					<h3 class="text-center">Bạn chưa nhập capcha</h3>
 				</div>
 			</div>
 		</div>

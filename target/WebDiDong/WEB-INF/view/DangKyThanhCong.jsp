@@ -36,7 +36,7 @@
 					<button type="button" class="close" data-dismiss="modal">×</button>
 				</div>
 				<div class="modal-body">
-					<h3 class="text-center">Dang Ky Thanh Cong</h3>
+					<h3 class="text-center">Đăng Ký Thành Công</h3>
 				</div>
 			</div>
 		</div>

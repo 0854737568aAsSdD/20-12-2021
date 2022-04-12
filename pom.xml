@@ -92,6 +92,13 @@
     <artifactId>mssql-jdbc</artifactId>
     <version>8.4.1.jre14</version>
 </dependency>
+       <!-- JSON Library -->
+       <!-- http://mvnrepository.com/artifact/org.glassfish/javax.json -->
+       <dependency>
+           <groupId>org.glassfish</groupId>
+           <artifactId>javax.json</artifactId>
+           <version>1.0.4</version>
+       </dependency>
 
 
     </dependencies>
